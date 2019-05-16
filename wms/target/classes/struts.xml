@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+	<!-- 开发者模式下打开，请求完成后清空浏览器缓存 -->
+	<constant name="struts.serve.static.browserCache"
+		value="false" />
+	<!-- 开发者模式，报出的异常更加清晰 -->
+	<constant name="struts.devMode" value="true" />
+	<!-- 配置文件修改后自动加载 ，上线后关闭 -->
+	<constant name="struts.configuration.xml.reload" value="true" />
+	<!-- 配置默认语言与地区 -->
+	<constant name="struts.locale" value="zh-CN"/>
+	<package name="action" extends="struts-default" namespace="/">
+		<interceptors>
+			<interceptor name="loginInterceptor" class="com.fjw.interceptor.LoginInterceptor"/>
+			<interceptor name="permissionInterceptor" class="com.fjw.interceptor.PermissionInterceptor"/>
+			<interceptor-stack name="mystack">
+				<interceptor-ref name="store">
+					<param name="operationMode">AUTOMATIC</param>
+				</interceptor-ref>
+				<interceptor-ref name="paramsPrepareParamsStack"/>
+				<interceptor-ref name="loginInterceptor"/>
+				<interceptor-ref name="permissionInterceptor"/>
+				<interceptor-ref name="defaultStack"/>
+			</interceptor-stack>
+		</interceptors>
+		<default-interceptor-ref name="mystack"/>
+		<global-results>
+			<result name="error">/WEB-INF/views/comments/error.jsp</result>
+			<result name="login">/login.jsp</result>
+		</global-results>
+		<!-- <global-exception-mappings>
+			<exception-mapping result="error" exception="java.lang.Exception" />
+		</global-exception-mappings> -->
+		<action name="employee_*" class="com.fjw.action.EmployeeAction" method="{1}">
+			<result name="list">/WEB-INF/views/employee/list.jsp</result>
+			<result name="edit">/WEB-INF/views/employee/edit.jsp</result>
+			<result name="saveOrUpdate" type="redirectAction">employee_list</result>
+		</action>
+		<action name="department_*" class="com.fjw.action.DepartmentAction" method="{1}">
+			<interceptor-ref name="mystack"></interceptor-ref>
+			<result name="list">/WEB-INF/views/department/list.jsp</result>
+			<result name="edit">/WEB-INF/views/department/edit.jsp</result>
+			<result name="saveOrUpdate" type="redirectAction">department_list</result>
+		</action>
+		<action name="permission_*" class="com.fjw.action.PermissionAction" method="{1}">
+			<result name="list">/WEB-INF/views/permission/list.jsp</result>
+			<result name="reload" type="redirectAction">permission_list</result>
+		</action>
+		<action name="role_*" class="com.fjw.action.RoleAction" method="{1}">
+			<result name="list">/WEB-INF/views/role/list.jsp</result>
+			<result name="edit">/WEB-INF/views/role/edit.jsp</result>
+			<result name="saveOrUpdate" type="redirectAction">role_list</result>
+		</action>
+		<action name="login" class="com.fjw.action.LoginAction">
+			<interceptor-ref name="defaultStack"></interceptor-ref>
+			<result name="login">login.jsp</result>
+			<result type="redirectAction">main</result>
+		</action>
+		<action name="main" class="com.fjw.action.MainAction">
+			<result>/WEB-INF/views/main.jsp</result>
+		</action>
+		<action name="systemMenu_*" class="com.fjw.action.SystemMenuAction" method="{1}">
+			<result name="list">/WEB-INF/views/systemMenu/list.jsp</result>
+			<result name="edit">/WEB-INF/views/systemMenu/edit.jsp</result>
+			<result name="saveOrUpdate" type="redirectAction">systemMenu_list</result>
+		</action>
+		<action name="brand_*" class="com.fjw.action.BrandAction" method="{1}">
+			<result name="list">/WEB-INF/views/brand/list.jsp</result>
+			<result name="edit">/WEB-INF/views/brand/edit.jsp</result>
+			<result name="saveOrUpdate" type="redirectAction">brand_list</result>
+		</action>
+		<action name="supplier_*" class="com.fjw.action.SupplierAction" method="{1}">
+			<result name="list">/WEB-INF/views/supplier/list.jsp</result>
+			<result name="edit">/WEB-INF/views/supplier/edit.jsp</result>
+			<result name="saveOrUpdate" type="redirectAction">supplier_list</result>
+		</action>
+		<action name="product_*" class="com.fjw.action.ProductAction" method="{1}">
+			<result name="list">/WEB-INF/views/product/list.jsp</result>
+			<result name="showProduct">/WEB-INF/views/product/showProduct.jsp</result>
+			<result name="edit">/WEB-INF/views/product/edit.jsp</result>
+			<result name="saveOrUpdate" type="redirectAction">product_list</result>
+		</action>
+		<action name="orderBill_*" class="com.fjw.action.OrderBillAction" method="{1}">
+			<result name="list">/WEB-INF/views/orderBill/list.jsp</result>
+			<result name="edit">/WEB-INF/views/orderBill/edit.jsp</result>
+			<result name="saveOrUpdate" type="redirectAction">orderBill_list</result>
+			<result name="audit" type="redirectAction">orderBill_list</result>
+			<result name="view">/WEB-INF/views/orderBill/view.jsp</result>
+		</action>
+		<action name="depot_*" class="com.fjw.action.DepotAction" method="{1}">
+			<result name="list">/WEB-INF/views/depot/list.jsp</result>
+			<result name="edit">/WEB-INF/views/depot/edit.jsp</result>
+			<result name="saveOrUpdate" type="redirectAction">depot_list</result>
+		</action>
+		<action name="stockIncomeBill_*" class="com.fjw.action.StockIncomeBillAction" method="{1}">
+			<result name="list">/WEB-INF/views/stockIncomeBill/list.jsp</result>
+			<result name="edit">/WEB-INF/views/stockIncomeBill/edit.jsp</result>
+			<result name="view">/WEB-INF/views/stockIncomeBill/view.jsp</result>
+			<result name="saveOrUpdate" type="redirectAction">stockIncomeBill_list</result>
+			<result name="audit" type="redirectAction">stockIncomeBill_list</result>
+		</action>
+		<action name="client_*" class="com.fjw.action.ClientAction" method="{1}">
+			<result name="list">/WEB-INF/views/client/list.jsp</result>
+			<result name="edit">/WEB-INF/views/client/edit.jsp</result>
+			<result name="saveOrUpdate" type="redirectAction">client_list</result>
+		</action>
+		<action name="stockOutcomeBill_*" class="com.fjw.action.StockOutcomeBillAction" method="{1}">
+			<result name="list">/WEB-INF/views/stockOutcomeBill/list.jsp</result>
+			<result name="edit">/WEB-INF/views/stockOutcomeBill/edit.jsp</result>
+			<result name="view">/WEB-INF/views/stockOutcomeBill/view.jsp</result>
+			<result name="saveOrUpdate" type="redirectAction">stockOutcomeBill_list</result>
+			<result name="audit" type="redirectAction">stockOutcomeBill_list</result>
+		</action>
+		<action name="productStock_*" class="com.fjw.action.ProductStockAction" method="{1}">
+			<result name="list">/WEB-INF/views/productStock/list.jsp</result>
+		</action>
+		<action name="orderChart_*" class="com.fjw.action.OrderChartAction" method="{1}">
+			<result name="list">/WEB-INF/views/orderChart/list.jsp</result>
+			<result name="showLineChart">/WEB-INF/views/orderChart/showLineChart.jsp</result>
+			<result name="showBarChart">/WEB-INF/views/orderChart/showBarChart.jsp</result>
+			<result name="showPieChart">/WEB-INF/views/orderChart/showPieChart.jsp</result>
+		</action>
+		<action name="saleChart_*" class="com.fjw.action.SaleChartAction" method="{1}">
+			<result name="list">/WEB-INF/views/saleChart/list.jsp</result>
+			<result name="showLineChart">/WEB-INF/views/saleChart/showLineChart.jsp</result>
+			<result name="showBarChart">/WEB-INF/views/saleChart/showBarChart.jsp</result>
+			<result name="showPieChart">/WEB-INF/views/saleChart/showPieChart.jsp</result>
+		</action>
+	</package>
+</struts>

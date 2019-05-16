@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.fjw.domain">
+	<class name="SystemMenu" table="systemmenu">
+		<id name="id">
+			<generator class="native"/>
+		</id>
+		<property name="name"/>
+		<property name="url"/>
+		<property name="sn"/>
+		<many-to-one name="parent" column="parent_id"/>
+		<set name="children" table="systemmenu" inverse="true">
+			<key column="parent_id"/>
+			<one-to-many class="SystemMenu"/>
+		</set>
+		<set name="roles" table="role_menus" inverse="true">
+			<key column="menu_id"/>
+			<many-to-many class="Role" column="role_id"/>
+		</set>
+	</class>
+</hibernate-mapping>

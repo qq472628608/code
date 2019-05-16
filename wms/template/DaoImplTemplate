@@ -1,0 +1,8 @@
+package ${pkg}.dao.impl;
+
+import ${pkg}.dao.I${className}DAO;
+import ${pkg}.domain.${className};
+
+public class ${className}DAOImpl extends GeneratorDAOImpl<${className}> implements I${className}DAO{
+
+}

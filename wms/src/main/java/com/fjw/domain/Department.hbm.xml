@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.fjw.domain">
+	<class name="Department" table="department">
+		<id name="id">
+			<generator class="native"/>
+		</id>
+		<property name="name"/>
+		<property name="sn"/>
+		<set name="employees" table="employee" inverse="true">
+			<key column="dept_id"/>
+			<one-to-many class="Employee"/>
+		</set>
+	</class>
+</hibernate-mapping>

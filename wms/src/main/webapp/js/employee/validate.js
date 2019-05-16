@@ -1,0 +1,34 @@
+$(function(){
+	$("#editForm").validate({
+		rules:{
+			'employee.name':"required",
+			'employee.password':{
+				required:true,
+				rangelength:[8,16]
+			},
+			'validate_password':{
+				equalTo:"#password"
+			},
+			'employee.email':"email",
+			'employee.age':{
+				required:true,
+				rangelength:[1,200]
+			},
+		},
+		messages:{
+			'employee.name':"必须填写用户名",
+			'employee.password':{
+				required:"必须填写密码",
+				rangelength:"长度在8-16位"
+			},
+			'validate_password':{
+				equalTo:"验证密码必须和填写密码一致"
+			},
+			'employee.email':"请输入正确的邮箱",
+			'employee.age':{
+				required:"请输入年龄",
+				rangelength:"年龄不合法"
+			}
+		}
+	});
+})

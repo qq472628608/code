@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="
+        http://www.springframework.org/schema/beans 
+        http://www.springframework.org/schema/beans/spring-beans.xsd">
+	<bean id="employeeService" class="com.fjw.service.impl.EmployeeServiceImpl">
+		<property name="employeeDAO" ref="employeeDAO"/>
+	</bean>
+	<bean id="departmentService" class="com.fjw.service.impl.DepartmentServiceImpl">
+		<property name="departmentDAO" ref="departmentDAO"/>
+	</bean>
+	<bean id="permissionService" class="com.fjw.service.impl.PermissionServiceImpl">
+		<property name="permissionDAO" ref="permissionDAO"/>
+	</bean>
+	<bean id="roleService" class="com.fjw.service.impl.RoleServiceImpl">
+		<property name="roleDAO" ref="roleDAO"/>
+	</bean>
+	<bean id="systemMenuService" class="com.fjw.service.impl.SystemMenuServiceImpl">
+		<property name="systemMenuDAO" ref="systemMenuDAO"/>
+	</bean>
+	<bean id="brandService" class="com.fjw.service.impl.BrandServiceImpl">
+		<property name="brandDAO" ref="brandDAO"/>
+	</bean>
+	<bean id="supplierService" class="com.fjw.service.impl.SupplierServiceImpl">
+		<property name="supplierDAO" ref="supplierDAO"/>
+	</bean>
+	<bean id="productService" class="com.fjw.service.impl.ProductServiceImpl">
+		<property name="productDAO" ref="productDAO"/>
+	</bean>
+	<bean id="orderBillService" class="com.fjw.service.impl.OrderBillServiceImpl">
+		<property name="orderBillDAO" ref="orderBillDAO"/>
+	</bean>
+	<bean id="depotService" class="com.fjw.service.impl.DepotServiceImpl">
+		<property name="depotDAO" ref="depotDAO"/>
+	</bean>
+	<bean id="stockIncomeBillService" class="com.fjw.service.impl.StockIncomeBillServiceImpl">
+		<property name="stockIncomeBillDAO" ref="stockIncomeBillDAO"/>
+		<property name="productStockDAO" ref="productStockDAO"/>
+	</bean>
+	<bean id="productStockService" class="com.fjw.service.impl.ProductStockServiceImpl">
+		<property name="productStockDAO" ref="productStockDAO"/>
+	</bean>
+	<bean id="clientService" class="com.fjw.service.impl.ClientServiceImpl">
+		<property name="clientDAO" ref="clientDAO"/>
+	</bean>
+	<bean id="stockOutcomeBillService" class="com.fjw.service.impl.StockOutcomeBillServiceImpl">
+		<property name="stockOutcomeBillDAO" ref="stockOutcomeBillDAO"/>
+		<property name="productStockDAO" ref="productStockDAO"/>
+		<property name="saleAccountDAO" ref="saleAccountDAO"/>
+	</bean>
+	<bean id="orderChartService" class="com.fjw.service.impl.OrderChartServiceImpl">
+		<property name="orderChartDAO" ref="orderChartDAO"/>
+	</bean>
+	<bean id="saleChartService" class="com.fjw.service.impl.SaleChartServiceImpl">
+		<property name="saleChartDAO" ref="saleChartDAO"/>
+	</bean>
+</beans>

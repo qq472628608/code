@@ -1,0 +1,8 @@
+0:0:0:0:0:0:0:1 - - [21/Mar/2019:11:21:45 +0800] "GET /wms/login.jsp HTTP/1.1" 404 977 http-bio-8080-exec-1 263
+0:0:0:0:0:0:0:1 - - [21/Mar/2019:11:22:29 +0800] "GET /wms/login HTTP/1.1" 404 977 http-bio-8080-exec-3 430
+0:0:0:0:0:0:0:1 - - [21/Mar/2019:11:22:46 +0800] "GET /login.jsp HTTP/1.1" 200 1241 http-bio-8080-exec-5 379
+0:0:0:0:0:0:0:1 - - [21/Mar/2019:11:22:46 +0800] "GET /style/login_css.css HTTP/1.1" 200 1743 http-bio-8080-exec-7 6
+0:0:0:0:0:0:0:1 - - [21/Mar/2019:11:22:46 +0800] "GET /js/jquery/jquery.js HTTP/1.1" 200 271751 http-bio-8080-exec-6 10
+0:0:0:0:0:0:0:1 - - [21/Mar/2019:11:22:46 +0800] "GET /js/system/login.js HTTP/1.1" 200 297 http-bio-8080-exec-8 10
+0:0:0:0:0:0:0:1 - - [21/Mar/2019:11:22:46 +0800] "GET /images/login/btn.jpg HTTP/1.1" 200 919 http-bio-8080-exec-10 3
+0:0:0:0:0:0:0:1 - - [21/Mar/2019:11:22:46 +0800] "GET /images/login/login.png HTTP/1.1" 200 142489 http-bio-8080-exec-8 5

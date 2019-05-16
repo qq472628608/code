@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="
+        http://www.springframework.org/schema/beans 
+        http://www.springframework.org/schema/beans/spring-beans.xsd">
+        <bean id="baseDAO" abstract="true">
+        	<property name="sessionFactory" ref="sessionFactory"/>
+        </bean>
+		<bean id="employeeDAO" class="com.fjw.dao.impl.EmployeeDAOImpl" parent="baseDAO"/>
+		<bean id="departmentDAO" class="com.fjw.dao.impl.DepartmentDAOImpl" parent="baseDAO"/>
+		<bean id="permissionDAO" class="com.fjw.dao.impl.PermissionDAOImpl" parent="baseDAO"/>
+		<bean id="roleDAO" class="com.fjw.dao.impl.RoleDAOImpl" parent="baseDAO"/>
+		<bean id="systemMenuDAO" class="com.fjw.dao.impl.SystemMenuDAOImpl" parent="baseDAO"/>
+		<bean id="brandDAO" class="com.fjw.dao.impl.BrandDAOImpl" parent="baseDAO"/>
+		<bean id="supplierDAO" class="com.fjw.dao.impl.SupplierDAOImpl" parent="baseDAO"/>
+		<bean id="productDAO" class="com.fjw.dao.impl.ProductDAOImpl" parent="baseDAO"/>
+		<bean id="orderBillDAO" class="com.fjw.dao.impl.OrderBilDAOImpl" parent="baseDAO"/>
+		<bean id="depotDAO" class="com.fjw.dao.impl.DepotDAOImpl" parent="baseDAO"/>
+		<bean id="stockIncomeBillDAO" class="com.fjw.dao.impl.StockIncomeBillDAOImpl" parent="baseDAO"/>
+		<bean id="productStockDAO" class="com.fjw.dao.impl.ProductStockDAOImpl" parent="baseDAO"/>
+		<bean id="clientDAO" class="com.fjw.dao.impl.ClientDAOImpl" parent="baseDAO"/>
+		<bean id="stockOutcomeBillDAO" class="com.fjw.dao.impl.StockOutcomeBillDAOImpl" parent="baseDAO"/>
+		<bean id="orderChartDAO" class="com.fjw.dao.impl.OrderChartDAOImpl" parent="baseDAO"/>
+		<bean id="saleAccountDAO" class="com.fjw.dao.impl.SaleAccountDAOImpl" parent="baseDAO"/>
+		<bean id="saleChartDAO" class="com.fjw.dao.impl.SaleChartDAOImpl" parent="baseDAO"/>
+</beans>

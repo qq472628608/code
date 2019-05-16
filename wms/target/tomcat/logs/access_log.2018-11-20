@@ -1,0 +1,16 @@
+0:0:0:0:0:0:0:1 - - [20/Nov/2018:13:04:31 +0800] "GET /login.jsp HTTP/1.1" 200 1241 http-bio-8080-exec-1 565
+0:0:0:0:0:0:0:1 - - [20/Nov/2018:13:04:34 +0800] "GET /favicon.ico HTTP/1.1" 404 973 http-bio-8080-exec-3 6
+0:0:0:0:0:0:0:1 - - [20/Nov/2018:13:06:48 +0800] "POST /login.action;jsessionid=4FFF0A6A3FA09775649D8A214D7594E3 HTTP/1.1" 302 - http-bio-8080-exec-5 612
+0:0:0:0:0:0:0:1 - - [20/Nov/2018:13:06:48 +0800] "GET /main.action HTTP/1.1" 200 3088 http-bio-8080-exec-7 118
+0:0:0:0:0:0:0:1 - - [20/Nov/2018:13:06:49 +0800] "GET /js/system/index.js HTTP/1.1" 304 - http-bio-8080-exec-8 4
+0:0:0:0:0:0:0:1 - - [20/Nov/2018:13:06:51 +0800] "GET /employee_list HTTP/1.1" 200 6994 http-bio-8080-exec-9 589
+0:0:0:0:0:0:0:1 - - [20/Nov/2018:13:06:52 +0800] "GET /department_list HTTP/1.1" 200 5875 http-bio-8080-exec-10 97
+0:0:0:0:0:0:0:1 - - [20/Nov/2018:13:06:53 +0800] "GET /role_list HTTP/1.1" 200 5399 http-bio-8080-exec-10 123
+0:0:0:0:0:0:0:1 - - [20/Nov/2018:13:06:54 +0800] "GET /permission_list HTTP/1.1" 200 5764 http-bio-8080-exec-10 73
+0:0:0:0:0:0:0:1 - - [20/Nov/2018:13:06:54 +0800] "GET /role_list HTTP/1.1" 200 5399 http-bio-8080-exec-10 46
+0:0:0:0:0:0:0:1 - - [20/Nov/2018:13:06:54 +0800] "GET /department_list HTTP/1.1" 200 5875 http-bio-8080-exec-10 45
+0:0:0:0:0:0:0:1 - - [20/Nov/2018:13:06:56 +0800] "GET /employee_list HTTP/1.1" 200 6994 http-bio-8080-exec-10 65
+0:0:0:0:0:0:0:1 - - [20/Nov/2018:13:06:58 +0800] "POST /employee_list.action HTTP/1.1" 200 5974 http-bio-8080-exec-10 56
+0:0:0:0:0:0:0:1 - - [20/Nov/2018:13:07:01 +0800] "GET /employee_list.action HTTP/1.1" 200 6994 http-bio-8080-exec-1 144
+0:0:0:0:0:0:0:1 - - [20/Nov/2018:13:07:01 +0800] "POST /employee_delete.action?employee.id=57 HTTP/1.1" 200 - http-bio-8080-exec-10 201
+0:0:0:0:0:0:0:1 - - [20/Nov/2018:13:07:02 +0800] "POST /employee_list.action HTTP/1.1" 200 5440 http-bio-8080-exec-1 47

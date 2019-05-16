@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="
+        http://www.springframework.org/schema/beans 
+        http://www.springframework.org/schema/beans/spring-beans.xsd">
+        <bean id="employeeAction" class="com.fjw.action.EmployeeAction">
+        	<property name="employeeService" ref="employeeService"/>
+        </bean>
+        <bean id="departmentAction" class="com.fjw.action.DepartmentAction">
+        	<property name="departmentService" ref="departmentService"/>
+        </bean>
+        <bean id="permissionAction" class="com.fjw.action.PermissionAction">
+        	<property name="permissionService" ref="permissionService"/>
+        </bean>
+        <bean id="roleAction" class="com.fjw.action.RoleAction">
+        	<property name="roleService" ref="roleService"/>
+        	<property name="permissionService" ref="permissionService"/>
+        	<property name="systemMenuService" ref="systemMenuService"/>
+        </bean>
+        <bean id="systemMenuAction" class="com.fjw.action.SystemMenuAction">
+        	<property name="systemMenuService" ref="systemMenuService"/>
+        </bean>
+        <bean id="brandAction" class="com.fjw.action.BrandAction">
+        	<property name="brandService" ref="brandService"/>
+        </bean>
+        <bean id="supplierAction" class="com.fjw.action.SupplierAction">
+        	<property name="supplierService" ref="supplierService"/>
+        </bean>
+        <bean id="productAction" class="com.fjw.action.ProductAction">
+        	<property name="productService" ref="productService"/>
+        	<property name="brandService" ref="brandService"/>
+        </bean>
+        <bean id="orderBillAction" class="com.fjw.action.OrderBillAction">
+        	<property name="orderBillService" ref="orderBillService"/>
+        	<property name="supplierService" ref="supplierService"/>
+        </bean>
+        <bean id="depotAction" class="com.fjw.action.DepotAction">
+        	<property name="depotService" ref="depotService"/>
+        </bean>
+        <bean id="stockIncomeBillAction" class="com.fjw.action.StockIncomeBillAction">
+        	<property name="stockIncomeBillService" ref="stockIncomeBillService"/>
+        	<property name="supplierService" ref="supplierService"/>
+        	<property name="depotService" ref="depotService"/>
+        </bean>
+        <bean id="clientAction" class="com.fjw.action.ClientAction">
+        	<property name="clientService" ref="clientService"/>
+        </bean>
+        <bean id="stockOutcomeBillAction" class="com.fjw.action.StockOutcomeBillAction">
+        	<property name="stockOutcomeBillService" ref="stockOutcomeBillService"/>
+        	<property name="depotService" ref="depotService"/>
+        	<property name="clientService" ref="clientService"/>
+        </bean>
+        <bean id="productStockAction" class="com.fjw.action.ProductStockAction">
+        	<property name="productStockService" ref="productStockService"/>
+        	<property name="depotService" ref="depotService"/>
+        	<property name="brandService" ref="brandService"/>
+        </bean>
+        <bean id="orderChartAction" class="com.fjw.action.OrderChartAction">
+        	<property name="orderChartService" ref="orderChartService"/>
+        	<property name="supplierService" ref="supplierService"/>
+        	<property name="brandService" ref="brandService"/>
+        </bean>
+        <bean id="saleChartAction" class="com.fjw.action.SaleChartAction">
+        	<property name="saleChartService" ref="saleChartService"/>
+        	<property name="clientService" ref="clientService"/>
+        	<property name="brandService" ref="brandService"/>
+        </bean>
+</beans>
