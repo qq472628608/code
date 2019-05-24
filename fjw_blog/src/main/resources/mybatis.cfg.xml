@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration 
+PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+	<settings>
+		<!-- 开启懒加载 -->
+		<setting name="lazyLoadingEnabled" value="true"/>
+		<!-- mang2one设置按需加载 -->
+		<setting name="aggressiveLazyLoading" value="false"/>
+		<!-- 打印sql -->
+		<!-- <setting name="logImpl" value="STDOUT_LOGGING"/> -->
+	</settings>
+</configuration>

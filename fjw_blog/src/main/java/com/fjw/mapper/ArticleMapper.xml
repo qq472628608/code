@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.fjw.mapper.ArticleMapper">
+	<resultMap type="Article" id="ArticleResult">
+		<id column="id" property="id" jdbcType="BIGINT"/>
+		<result column="title" property="title" jdbcType="CHAR"/>
+		<result column="text" property="text" jdbcType="LONGVARCHAR"/>
+		<result column="love" property="love" jdbcType="INTEGER"/>
+		<result column="image" property="image" jdbcType="VARCHAR"/>
+		<association property="kind" column="kindid" select="selectKind" javaType="Kind"></association>
+	</resultMap>
+	<insert id="save" parameterType="Article">
+  		insert into article (title,summary,text,love,image,kindid) values (#{title,jdbcType=CHAR},
+  		#{summary,jdbcType=VARCHAR},#{text,jdbcType=LONGVARCHAR},#{love,jdbcType=INTEGER},#{image,jdbcType=VARCHAR},
+  		#{kind.id,jdbcType=BIGINT});
+  	</insert>
+	<delete id="delete" parameterType="java.lang.Long">
+		delete from article where id=#{id,jdbcType=BIGINT};
+	</delete>
+	<select id="get" resultMap="ArticleResult">
+		select * from article where id=#{id,jdbcType=BIGINT};
+	</select>
+	<update id="update" parameterType="Article">
+		update article set title=#{title,jdbcType=CHAR},summary=#{summary,jdbcType=VARCHAR},text=#{text,jdbcType=LONGVARCHAR},
+		love=#{love,jdbcType=INTEGER},image=#{image,jdbcType=VARCHAR},kindid=#{kind.id,jdbcType=BIGINT} where id=#{id,jdbcType=BIGINT}
+	</update>
+	<select id="list" resultMap="ArticleResult">
+		select * from article;
+	</select>
+	<select id="query" resultMap="ArticleResult" parameterType="java.lang.String">
+		select * from article where (title like #{keywords,jdbcType=CHAR} or summary like #{keywords,jdbcType=CHAR});
+	</select>
+	<!-- 多对一查询一 -->
+	<select id="selectKind" parameterType="java.lang.Long" resultType="Kind">
+		select * from kind where id = #{kindid,jdbcType=BIGINT};
+	</select>
+	<!-- 多对多保存 -->
+	<insert id="saveUserAndArticle" parameterType="java.lang.Long">
+  		insert into user_article (userid,articleid) values (#{userid,jdbcType=BIGINT},#{articleid,jdbcType=BIGINT});
+  	</insert>
+  	<delete id="deleteUserAndArticle" parameterType="java.lang.Long">
+  		delete from user_article where userid=#{userid,jdbcType=BIGINT} and articleid=#{articleid,jdbcType=BIGINT};
+  	</delete>
+  	<!-- 多对多查询article -->
+  	<select id="selectByUserid" parameterType="java.lang.Long" resultMap="ArticleResult">
+  		select * from article where id in (select articleid from user_article where userid=(select id from user where id=#{userid,jdbcType=BIGINT}));
+  	</select>
+</mapper>

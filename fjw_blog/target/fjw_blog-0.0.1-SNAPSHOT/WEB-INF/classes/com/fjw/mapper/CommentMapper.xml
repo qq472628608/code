@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.fjw.mapper.CommentMapper">
+	<resultMap type="Comment" id="CommentResult">
+		<id column="id" property="id" jdbcType="BIGINT"/>
+		<result column="text" property="text" jdbcType="VARCHAR"/>
+		<result column="time" property="time" jdbcType="TIMESTAMP"/>
+		<association property="parent" column="parentid" select="selectParent" javaType="Comment"></association>
+		<association property="user" column="userid" select="selectUser" javaType="User"></association>
+		<association property="article" column="articleid" select="selectArticle" javaType="Article"></association>
+	</resultMap>
+	<insert id="save" parameterType="Comment">
+  		insert into comment (text,time,parentid,userid,articleid) values (#{text,jdbcType=VARCHAR},#{time,jdbcType=TIMESTAMP},
+  		#{parent.id,jdbcType=BIGINT},#{user.id,jdbcType=BIGINT},#{article.id,jdbcType=BIGINT});
+  	</insert>
+	<delete id="delete" parameterType="java.lang.Long">
+		delete from comment where id=#{id,jdbcType=BIGINT};
+	</delete>
+	<select id="get" resultMap="CommentResult" parameterType="java.lang.Long">
+		select * from comment where id=#{id,jdbcType=BIGINT};
+	</select>
+	<update id="update" parameterType="Comment">
+		update comment set text=#{text,jdbcType=VARCHAR},time=#{time,jdbcType=TIMESTAMP},parentid=#{parent.id,jdbcType=BIGINT},
+		userid=#{user.id,jdbcType=BIGINT},articleid=#{article.id,jdbcType=BIGINT} where id=#{id,jdbcType=BIGINT};
+	</update>
+	<select id="listFour" resultMap="CommentResult">
+		select * from comment order by time desc limit 4;
+	</select>
+	<select id="list" resultMap="CommentResult" parameterType="java.lang.Long">
+		select * from comment where articleid = #{articleid,jdbcType=BIGINT};
+	</select>
+	<!-- 多对一查询一 -->
+	<select id="selectParent" parameterType="java.lang.Long" resultMap="CommentResult">
+		select * from comment where id = #{parentid,jdbcType=BIGINT};
+	</select>
+	<select id="selectUser" parameterType="java.lang.Long" resultType="User">
+		select * from user where id = #{userid,jdbcType=BIGINT};
+	</select>
+	<select id="selectArticle" parameterType="java.lang.Long" resultMap="com.fjw.mapper.ArticleMapper.ArticleResult">
+		select * from article where id = #{articleid,jdbcType=BIGINT};
+	</select>
+</mapper>

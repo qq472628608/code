@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>范佳伟的个人博客</title>
+	<link href="../image/logo.ico" rel="icon" type="image/x-icon">
+	<link rel="stylesheet" type="text/css" href="../css/reset.min.css">
+    <link rel="stylesheet" type="text/css" href="../css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="../css/prism.css">
+    <link rel="stylesheet" type="text/css" href="../css/edit.css">
+</head>
+<body>
+    <input type="hidden" name="id">
+    <div id="container">
+        <div id="bar">
+            <div id="title">
+                标题：<input type="text" name="title">
+            </div>
+            <div id="image">
+                配图：<input type="file" name="image">
+            </div>
+            <div id="kind">
+                类别：<select name="kind">
+                    <option value="1">java</option>
+                    <option value="2">前端</option>
+                    <option value="3">数据结构</option>
+                    <option value="4">算法</option>
+                    <option value="5">其他</option>
+                    <option value="6">资源</option>
+                </select>
+            </div>
+        </div>
+        
+        <div id="summary">
+            <textarea name="summary" placeholder="简介" cols="30" rows="10"></textarea>
+        </div>
+        <div id="div1">
+                           
+        </div>
+        <div id="div2">
+
+        </div>
+        <div id="submit">
+            <button>提交</button>
+        </div>
+    </div>
+    <script type="text/javascript" src="../js/wangEditor.min.js"></script>
+    <script type="text/javascript" src="../js/prism.js"></script>
+    <script type="text/javascript" src="../js/edit.js"></script>
+</body>
+</html>

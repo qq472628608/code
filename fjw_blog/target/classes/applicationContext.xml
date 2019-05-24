@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="
+        http://www.springframework.org/schema/beans 
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/tx 
+        http://www.springframework.org/schema/tx/spring-tx.xsd
+        http://www.springframework.org/schema/aop 
+        http://www.springframework.org/schema/aop/spring-aop.xsd
+        http://www.springframework.org/schema/mvc 
+        http://www.springframework.org/schema/mvc/spring-mvc.xsd
+        http://www.springframework.org/schema/context 
+        http://www.springframework.org/schema/context/spring-context.xsd">
+	<!-- 使用注解注入bean 配置扫描器 -->
+	<context:component-scan base-package="com.fjw" />
+	<!-- 开启注解驱动支持，可以返回json -->
+	<mvc:annotation-driven></mvc:annotation-driven>
+	<!-- 配置springmvc不会把静态资源当做请求路径,否则访问index.html会被当成请求去寻找index.html对应的controller -->
+	<mvc:default-servlet-handler />
+	<!-- 开启注解配置aop -->
+	<aop:aspectj-autoproxy></aop:aspectj-autoproxy>
+	<!-- 1.导入外部文件db.properties -->
+	<context:property-placeholder
+		location="classpath:db.properties" />
+
+	<!-- 2.配置数据源 -->
+	<bean id="dataSource" class=" com.alibaba.druid.pool.DruidDataSource" init-method="init" destroy-method="close">
+        	<property name="driverClassName" value="${jdbc.driverClassName}"/>
+        	<property name="url" value="${jdbc.url}"/>
+        	<property name="username" value="${jdbc.username}"/>
+        	<property name="password" value="${jdbc.password}"/>
+        </bean>
+
+	<!-- 3.配置sessionFactory -->
+	<bean id="sqlSessionFactory"
+		class="org.mybatis.spring.SqlSessionFactoryBean">
+		<property name="dataSource" ref="dataSource" />
+		<!-- mybatis配置文件 -->
+		<property name="configLocation"
+			value="classpath:mybatis.cfg.xml" />
+		<!-- 扫描所有的mapper -->
+		<property name="mapperLocations"
+			value="classpath:com/fjw/mapper/*Mapper.xml" />
+		<!-- 扫描所有用别名的类所在的包 -->
+		<property name="typeAliasesPackage" value="com.fjw.domain" />
+	</bean>
+
+	<!-- 4.配置事务管理器 -->
+	<bean id="transactionManager"
+		class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+		<property name="dataSource" ref="dataSource" />
+	</bean>
+
+	<!-- 5.配置事务模板 -->
+	<tx:advice id="advice"
+		transaction-manager="transactionManager">
+		<tx:attributes>
+			<tx:method name="get*" read-only="true" />
+			<tx:method name="list*" read-only="true" />
+			<tx:method name="query*" read-only="true" />
+			<tx:method name="*" />
+		</tx:attributes>
+	</tx:advice>
+
+	<!-- 6.aop切面配置 -->
+	<aop:config>
+		<aop:pointcut
+			expression="execution(* com.fjw.service.*Service.*(..))"
+			id="pointcut" />
+		<aop:advisor advice-ref="advice" pointcut-ref="pointcut" />
+	</aop:config>
+
+	<!-- 扫描mapper接口的扫描器 -->
+	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+		<property name="basePackage" value="com.fjw.mapper" />
+		<property name="sqlSessionFactoryBeanName" value="sqlSessionFactory"/>
+	</bean>
+	<!-- 配置文件上传的bean -->
+	<bean id="multipartResolver"
+		class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+		<property name="maxUploadSize">
+			<!-- 限制文件上传最大10MB -->
+			<value>#{10*1024*1024}</value>
+		</property>
+	</bean>
+	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<property name="prefix" value="/"></property>
+		<property name="suffix" value=".html"></property>
+	</bean>
+</beans>

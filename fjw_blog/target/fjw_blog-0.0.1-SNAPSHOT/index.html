@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="keywords" content="java,博客">
+	<meta name="author" content="土豆大人">
+	<title>范佳伟的个人博客</title>
+	<link rel="stylesheet" type="text/css" href="./css/reset.min.css">
+	<link rel="stylesheet" type="text/css" href="./css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="./css/index.css">
+	<link href="./image/logo.ico" rel="icon" type="image/x-icon">	
+</head>
+<body>
+	<header id="index_header">
+		<div class="container">
+			<div class="tohome">
+				<a href="home.html" class="a_home">
+				<span class="a_home_font">博客</span>
+					<i class="fa fa-university"></i></a>
+			</div>
+			<div class="logo">
+					<img src="./image/logo.png">
+					<span class="logo_text">FjwBlog</span>			
+			</div>
+		</div>		
+	</header>
+	<div id="index_body">
+		<div class="text">	
+			<h1>千山万重，负重前行。</h1>
+			<p>就算疲倦,就算累，你也只能执迷不悟。 
+			要知道，生命就是不断犯错的过程，不努力一下你都进不了别人的黑名单。</p>
+			<button class="btn_login">登陆</button><br>
+			<button class="btn_register">注册</button>
+		</div>
+		<img class="image_cloud1" src="./image/cloud1.png">
+		<img class="image_sun" src="./image/sun.png">
+		<img class="image_cloud2" src="./image/cloud2.png">
+		<img class="image_cloud3" src="./image/cloud3.png">
+		<img class="image_circle2" src="./image/circle2.png">
+		<img class="image_circle1" src="./image/circle1.png">
+		<img class="image_cycle" src="./image/cycle.png">
+		<img class="image_house" src="./image/house.png">
+	</div>
+	<!-- 登陆组件 -->
+	<div id="login">
+		<i class="fa fa-times"></i>
+		<div class="login_container">
+			<div class="image">
+				<img class="image_clients" src="./image/clients.png">	
+			</div>
+				<input class="myInput" type="email" placeholder="账号/邮箱" name="username"><br>
+				<input class="myInput" type="password" placeholder="密码" name="password">
+				<span class="msg"></span>
+			<i id="login_fa1" class="fa fa-square-o"></i><span class="select_text1">记住密码</span><br>
+			<i class="fa fa-question-circle"></i><a class="a_forget" href="javascript:method_forget();">忘记密码</a>
+			<a class="a_register" href="javascript:method_register();">注册?</a><br>
+			<button class="btn_submit">登陆</button>
+		</div>
+	</div>
+	<!-- 注册组件 -->
+	<div id="register">
+		<i class="fa fa-times"></i>
+		<div class="register_container">
+			<div class="image">
+				<img class="image_clients" src="./image/clients.png">	
+			</div>
+				<input class="myInput" type="text" placeholder="邮箱" name="username"><br>
+				<input class="myInput" type="password" placeholder="密码/6~12位" name="password"><br>
+				<input class="myInput" type="password" placeholder="再输入一遍密码" name="password2"><br>
+				<input class="identify_input" type="text" placeholder="验证码" name="identifyCode">
+				<button class="btn_identify">发送验证码</button><br>
+				<span class="msg"></span>
+			<button class="btn_submit">注册</button><br>
+			<a class="a_login" href="javascript:method_login();">去登陆？</a>
+		</div>
+	</div>
+	<!-- 忘记密码 -->
+	<div id="forget">
+		<i class="fa fa-times"></i>
+		<div class="forget_container">
+			<div class="image">
+				<img class="image_clients" src="./image/clients.png">	
+			</div>
+			<input class="myInput" type="text" placeholder="邮箱" name="username"><br>
+			<input class="identify_input" type="text" placeholder="验证码" name="identifyCode">
+			<button class="btn_identify">发送验证码</button><br>
+			<input class="myInput" type="password" placeholder="设置密码/6~12位" name="password"><br>
+			<input class="myInput" type="password" placeholder="再输入一遍密码" name="password2">
+			<span class="msg"></span>
+			<button class="btn_submit">提交</button><br>
+			<a class="a_login" href="javascript:method_login();">去登陆？</a>
+		</div>
+	</div>
+	<script src="./js/index.js"></script>
+</body>
+</html>

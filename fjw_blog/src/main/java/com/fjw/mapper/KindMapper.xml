@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.fjw.mapper.KindMapper">
+	<insert id="save" parameterType="Kind">
+  		insert into kind (name,sn) values (#{name,jdbcType=CHAR},#{sn,jdbcType=INTEGER});
+  	</insert>
+	<delete id="delete" parameterType="java.lang.Long">
+		delete from kind where id=#{id,jdbcType=BIGINT};
+	</delete>
+	<select id="get" resultType="Kind">
+		select * from kind where sn=#{sn,jdbcType=INTEGER};
+	</select>
+	<update id="update" parameterType="Kind">
+		update kind set name=#{name,jdbcType=CHAR},sn=#{sn,jdbcType=INTEGER} where id=#{id,jdbcType=BIGINT};
+	</update>
+	<select id="list" resultType="Kind">
+		select * from kind;
+	</select>
+</mapper>
