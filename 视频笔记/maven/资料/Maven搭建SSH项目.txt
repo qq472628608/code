@@ -1,0 +1,169 @@
+一:项目的基础构建:
+	1):开发者信息
+	2):项目编码
+	3):项目编译版本
+	4):项目运行环境
+	
+1:开发者信息:
+	<developers>
+		<developer>
+			<id>Will</id>
+			<name>Will</name>
+			<email>iwiller@sina.cn</email>
+			<url>www.520it.com</url>
+			<timezone>8</timezone>
+		</developer>
+	</developers>
+2:项目编码
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	</properties>
+	
+3:项目编译版本和项目运行环境
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.tomcat.maven</groupId>
+				<artifactId>tomcat7-maven-plugin</artifactId>
+				<version>2.2</version>
+				<configuration>
+					<uriEncoding>UTF-8</uriEncoding>
+					<path>/</path>
+					<port>8080</port>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<configuration>
+					<source>1.7</source>
+					<target>1.7</target>
+					<encoding>UTF-8</encoding>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+-----------------------------------------------------------------
+二:项目其他构建
+	1):junit
+	2):lombok工具
+	3):MySQL驱动包
+	4):druid包
+	5):servlet-api
+	
+	<!-- 单元测试 -->
+	<dependency>
+		<groupId>junit</groupId>
+		<artifactId>junit</artifactId>
+		<version>4.12</version>
+		<scope>test</scope>
+	</dependency>
+	<!-- lombok工具 -->
+	<dependency>
+		<groupId>org.projectlombok</groupId>
+		<artifactId>lombok</artifactId>
+		<version>1.16.6</version>
+	</dependency>
+	<!-- MySQL驱动 -->
+	<dependency>
+		<groupId>mysql</groupId>
+		<artifactId>mysql-connector-java</artifactId>
+		<version>5.1.21</version>
+	</dependency>
+	<!-- druid连接池 -->
+	<dependency>
+		<groupId>com.alibaba</groupId>
+		<artifactId>druid</artifactId>
+		<version>1.0.15</version>
+	</dependency>
+	<!-- servlet-api -->
+	<dependency>
+		<groupId>javax.servlet</groupId>
+		<artifactId>javax.servlet-api</artifactId>
+		<version>3.0.1</version>
+		<scope>provided</scope>
+	</dependency>
+		
+-----------------------------------------------------------------
+三:SSH框架构建
+	声明框架版本:
+		<spring.version>4.2.4.RELEASE</spring.version>
+		<hibernate.version>4.3.5.Final</hibernate.version>
+		<struts2.version>2.3.24</struts2.version>
+Spring:
+	1):spring-core
+	2):spring-context
+	3):spring-orm
+	4):spring-aop
+	5):Spring-web
+	6):Spring-test
+	7):aspectjweaver 
+
+Hibernate:
+	hibernate-core
+	
+Struts2:
+	1):struts2-core
+	2):struts2-json-plugin
+	3):struts2-spring-plugin
+	
+		<!-- Spring -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-core</artifactId>
+			<version>4.2.4.RELEASE</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-context</artifactId>
+			<version>4.2.4.RELEASE</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-orm</artifactId>
+			<version>4.2.4.RELEASE</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-aop</artifactId>
+			<version>4.2.4.RELEASE</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-web</artifactId>
+			<version>4.2.4.RELEASE</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-test</artifactId>
+			<version>4.2.4.RELEASE</version>
+		</dependency>
+		<dependency>
+			<groupId>org.aspectj</groupId>
+			<artifactId>aspectjweaver</artifactId>
+			<version>1.8.7</version>
+		</dependency>
+
+		<!-- Hibernate -->
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-core</artifactId>
+			<version>4.3.5.Final</version>
+		</dependency>
+		
+		<!-- Struts2 -->
+		<dependency>
+			<groupId>org.apache.struts</groupId>
+			<artifactId>struts2-core</artifactId>
+			<version>2.3.24</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.struts</groupId>
+			<artifactId>struts2-json-plugin</artifactId>
+			<version>2.3.24</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.struts</groupId>
+			<artifactId>struts2-spring-plugin</artifactId>
+			<version>2.3.24</version>
+		</dependency>
