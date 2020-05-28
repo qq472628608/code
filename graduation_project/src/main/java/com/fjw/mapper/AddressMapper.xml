@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.fjw.mapper.AddressMapper">
+	<resultMap type="Address" id="AddressResult">
+		<id column="id" property="id" jdbcType="BIGINT"/>
+		<result column="name" property="name" jdbcType="VARCHAR"/>
+		<result column="phone" property="phone" jdbcType="VARCHAR"/>
+		<result column="detail" property="detail" jdbcType="VARCHAR"/>
+		<result column="isDefault" property="isDefault" jdbcType="INTEGER"/>
+		<result column="user_id" property="user_id" jdbcType="BIGINT"/>
+		<association property="province" column="province_id" select="com.fjw.mapper.AreaMapper.getArea" javaType="Area"/>
+		<association property="city" column="city_id" select="com.fjw.mapper.AreaMapper.getArea" javaType="Area"/>
+		<association property="county" column="county_id" select="com.fjw.mapper.AreaMapper.getArea" javaType="Area"/>
+	</resultMap>
+	<insert id="saveAddress" parameterType="com.fjw.dto.AddressDto">
+  		insert into address (name,phone,province_id,city_id,county_id,detail,isDefault,user_id) values (#{name,jdbcType=VARCHAR},
+  		#{phone,jdbcType=VARCHAR},#{province_id,jdbcType=BIGINT},#{city_id,jdbcType=BIGINT},#{county_id,jdbcType=BIGINT},
+  		#{detail,jdbcType=VARCHAR},#{isDefault,jdbcType=INTEGER},#{user_id,jdbcType=BIGINT});
+  	</insert>
+	<delete id="deleteAddress" parameterType="java.lang.Long">
+		delete from address where id=#{id,jdbcType=BIGINT} and user_id = #{user_id,jdbcType=BIGINT};
+	</delete>
+	<select id="getAddress" resultMap="AddressResult">
+		select * from address where id=#{id,jdbcType=BIGINT} and user_id = #{user_id,jdbcType=BIGINT};
+	</select>
+	<select id="getSingleAddress" resultMap="AddressResult">
+		select * from address where id=#{id,jdbcType=BIGINT};
+	</select>
+	<select id="getDefaultAddress" resultMap="AddressResult">
+		select * from address where user_id=#{user_id,jdbcType=BIGINT} and isDefault = 1;
+	</select>
+	<update id="updateAddress" parameterType="com.fjw.dto.AddressDto">
+		update address set name=#{name,jdbcType=VARCHAR},phone=#{phone,jdbcType=VARCHAR},province_id=#{province_id,jdbcType=BIGINT},
+		city_id=#{city_id,jdbcType=BIGINT},county_id=#{county_id,jdbcType=BIGINT},detail=#{detail,jdbcType=VARCHAR},
+		isDefault=#{isDefault,jdbcType=INTEGER} where id=#{id,jdbcType=BIGINT} and user_id = #{user_id,jdbcType=BIGINT};
+	</update>
+	<update id="update" parameterType="Address">
+		update address set name=#{name,jdbcType=VARCHAR},phone=#{phone,jdbcType=VARCHAR},province_id=#{province.id,jdbcType=BIGINT},
+		city_id=#{city.id,jdbcType=BIGINT},county_id=#{county.id,jdbcType=BIGINT},detail=#{detail,jdbcType=VARCHAR},
+		isDefault=#{isDefault,jdbcType=INTEGER} where id=#{id,jdbcType=BIGINT} and user_id = #{user_id,jdbcType=BIGINT};
+	</update>
+	<update id="setAllNotDefault" parameterType="java.lang.Long">
+		update address set isDefault=0 where user_id=#{user_id,jdbcType=BIGINT};
+	</update>
+	<update id="setDefault" parameterType="java.lang.Long">
+		update address set isDefault=1 where id=#{id,jdbcType=BIGINT} and user_id = #{user_id,jdbcType=BIGINT};
+	</update>
+	<select id="list" resultMap="AddressResult">
+		select * from address;
+	</select>
+	<select id="queryByUser" resultMap="AddressResult">
+		select * from address where user_id = #{user_id,jdbcType=BIGINT};
+	</select>
+	<delete id="batchDelete" parameterType="java.util.List">
+		delete from address where 1 > 2 or id in 
+		<foreach collection="array" item="item" open="(" separator="," close=")">
+			#{item,jdbcType=BIGINT}
+		</foreach>
+	</delete>
+</mapper>

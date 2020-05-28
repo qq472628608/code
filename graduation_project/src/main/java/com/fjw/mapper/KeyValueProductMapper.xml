@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.fjw.mapper.KeyValueProductMapper">
+	<resultMap type="KeyValueProduct" id="KeyValueProductResult">
+		<id column="id" property="id" jdbcType="BIGINT"/>
+		<result column="product_id" property="product_id" jdbcType="BIGINT"/>
+		<association property="keyValue" column="key_value_id" select="com.fjw.mapper.KeyValueMapper.get" javaType="KeyValue"></association>
+	</resultMap>
+	<insert id="add" parameterType="java.lang.Long">
+  		insert into key_value_product (product_id,key_value_id) values (#{product_id,jdbcType=BIGINT},#{key_value_id,jdbcType=BIGINT});
+  	</insert>
+  	<select id="list" resultMap="KeyValueProductResult">
+		select * from key_value_product where product_id=#{product_id,jdbcType=BIGINT};
+	</select>
+	<select id="get" resultMap="KeyValueProductResult">
+		select * from key_value_product where id=#{id,jdbcType=BIGINT};
+	</select>
+	<select id="delete" parameterType="java.lang.Long">
+		delete from key_value_product where id=#{id,jdbcType=BIGINT};
+	</select>
+</mapper>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.fjw.mapper.ImgStateMapper">
+	<insert id="saveImgState" parameterType="ImgState">
+  		insert into img_state (name) values (#{name,jdbcType=VARCHAR});
+  	</insert>
+	<select id="getByName" resultType="ImgState">
+		select * from img_state where name=#{imgState.name,jdbcType=VARCHAR};
+	</select>
+	<select id="getImgState" resultType="ImgState">
+		select * from img_state where id = #{id,jdbcType=BIGINT};
+	</select>
+	<update id="updateImgState" parameterType="ImgState">
+		update img_state set name=#{name,jdbcType=VARCHAR} where id=#{id,jdbcType=BIGINT};
+	</update>
+	<select id="list" resultType="ImgState">
+		select * from img_state;
+	</select>
+</mapper>

@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/css/reset.min.css">
+    <link rel="stylesheet" href="/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/css/iconfont.css">
+    <link rel="stylesheet" href="/css/common.css">
+    <link rel="stylesheet" href="/css/detail.css">
+    <title>商品详情</title>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="header-container">
+                <a href="/html/index.html">
+                    <div class="logo">
+                        <svg fill="#00b4ff" version="1.1" id="Logo" xmlns="http://www.w3.org/2000/svg"
+                        x="0px" y="0px" width="130.048px" height="25.556px" viewBox="17.318 5.824 402.048 73.556"
+                        enable-background="new 17.318 5.824 402.048 73.556">
+                        <path d="M321.513,5.824H256.91v12.878h51.478l-49.294,44.581c-8.227,7.023-2.872,16.096,3.958,16.096h65.337V66.472 h-52.117l48.964-44.554C333.52,14.473,328.535,5.824,321.513,5.824">
+                        </path>
+                        <path d="M104.296,5.824h-71.36c-8.576,0-15.618,7.012-15.618,15.588v57.967H31.14V23.743 c0-2.711,2.208-5.041,4.92-5.041h25.31v60.677h14.428V18.702h25.312c2.712,0,4.919,2.329,4.919,5.041v55.636h13.86V21.416 C119.888,12.841,112.872,5.824,104.296,5.824">
+                        </path>
+                        <rect x="148.756" y="5.824" width="14.426" height="73.556"></rect>
+                        <line x1="185" y1="44" x2="237" y2="44" style="stroke:rgb(0,190,255,1);stroke-width:12"/>
+                        <rect x="352.506" y="5.824" width="14.426" height="73.556"></rect>
+                    </svg>
+                    </div>
+                </a>
+                <div class="link">
+                    <ul class="header-link-ul">
+                        <li class="link-last">
+                            <a href="" class="a-kind">我们相关</a>
+                            <div class="detail detail-download">
+                                <img src="/images/header30.jpg" alt="">
+                            </div>
+                        </li>
+                        <li>
+                            <div class="search">
+                                <input type="text" name="search" placeholder="现代简约茶几">
+                                <a href="javascript:search();">
+                                    <svg width="17px" height="14px" viewBox="0 0 17 14" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                        <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                            <g transform="translate(-1469.000000, -32.000000)" fill="#666666" fill-rule="nonzero">
+                                                <g>
+                                                    <g>
+                                                        <g transform="translate(1323.000000, 25.000000)">
+                                                            <g transform="translate(139.000000, 0.000000)">
+                                                                <path d="M14,20.75 C10.2720779,20.75 7.25,17.7279221 7.25,14 C7.25,10.2720779 10.2720779,7.25 14,7.25 C17.7279221,7.25 20.75,10.2720779 20.75,14 C20.75,17.7279221 17.7279221,20.75 14,20.75 Z M14,19.25 C16.8994949,19.25 19.25,16.8994949 19.25,14 C19.25,11.1005051 16.8994949,8.75 14,8.75 C11.1005051,8.75 8.75,11.1005051 8.75,14 C8.75,16.8994949 11.1005051,19.25 14,19.25 Z" id="Oval"></path>
+                                                                <path d="M19.0640714,18.1103001 C18.7270119,17.8695434 18.6489432,17.4011308 18.8896999,17.0640714 C19.1304566,16.7270119 19.5988692,16.6489432 19.9359286,16.8896999 L23.4359286,19.3896999 C23.7729881,19.6304566 23.8510568,20.0988692 23.6103001,20.4359286 C23.3695434,20.7729881 22.9011308,20.8510568 22.5640714,20.6103001 L19.0640714,18.1103001 Z" id="Line-2"></path>
+                                                            </g>
+                                                        </g>
+                                                    </g>
+                                                </g>
+                                            </g>
+                                        </g>
+                                    </svg>
+                                </a>
+                            </div>
+                        </li>
+                        <li class="user">
+                            <a class="user-title-tag" href="/html/pinfo.html">
+                            </a>
+                            <div class="user-ops-box">
+                                <div class="trangle-tag"></div>
+                                <ul class="user-ops">
+                                    <li>
+                                        <a href="/html/login.html">立即登陆</a>
+                                    </li>
+                                    <li>
+                                        <a href="/html/pinfo.html">个人中心</a>
+                                    </li>
+                                    <li>
+                                        <a href="">注销用户</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="shoppingcar">
+                            <a href="/html/car.html">
+                            </a>
+                            <em>0</em>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        
+        
+        <div class="box">
+            <div class="box-detail clearfix">
+                <div class="left detail-component">
+                    <div class="big-img">
+                    </div>
+                    <div>
+                        <ul class="small-img">
+                        </ul>
+                    </div>
+                    <div class="collect">
+                        <div class="div1">
+                            <i class="fa fa-star" aria-hidden="true"></i>
+                        </div>
+                        <div class="div2">收藏</div>
+                    </div>
+                </div>
+                <div class="right detail-component">
+                    <div>
+                        <div>
+                            <div class="title">
+                                魅族 16s
+                            </div>
+                            <div class="introduction">
+                                【限时领券最高立减200】【限时3期免息】 高通骁龙855 | 4800W光学防抖 | 对称式AMOLED全面屏 | 极速屏下指纹 | 全功能NFC | 3600mAh大电池 | 7.6mm纤薄机身 | mEngine3.0
+                            </div>
+                            <div class="price">
+                                <span class="money">￥</span><span class="money-number">2999</span>
+                            </div>
+                            <div class="">
+                                <div class="support">
+                                    <span class="detail-small-title short">支持</span>
+                                    <ul>
+                                        <li>
+                                            <i class="iconfont icon-success"></i>花呗分期
+                                        </li>
+                                        <li>
+                                            <i class="iconfont icon-success"></i>顺丰发货
+                                        </li>
+                                        <li>
+                                            <i class="iconfont icon-success"></i>七天无理由退货（激活后不支持）
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="express">
+                                    <div class="express-container-1">
+                                        <span class="detail-small-title">配送服务</span>
+                                        <span class="span1"><span><i class="fa fa-clock-o" aria-hidden="true"></i>顺丰包邮</span></span>
+                                        <span>付款后预计20天内发货</span>
+                                    </div>
+                                    <div class="express-container-2">
+                                        本商品由 米子 负责发货并提供售后服务
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="option">
+                        <div class="option-box">
+                        </div>
+                    <div class="number">
+                        <div>
+                            <span class="detail-small-title short">数量</span>
+                            <div class="select-number">
+                                <button class="btn-number desc">-</button>
+                                <input type="text" name="number" value="1" readonly="true">
+                                <button class="btn-number incr">+</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="btn-container">
+                        <ul>
+                            <li>
+                                <button class="btn-buy"><span>立即购买</span></button>
+                            </li>
+                            <li>
+                                <button class="btn-addcar"><span>加入购物车</span></button>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="all-introduction">
+            <div class="all-introduction-title">
+                <span class="all-introduction-detail active">商品详情</span>
+                <span class="all-introduction-comment">商品评论</span>
+            </div>
+            <div class="introduction-comment">
+                <div class="all-comment">
+                    <div class="all-comment-left">
+                        <div>
+                            商品评分：(<span class="number0">0</span>人评分)
+                        </div>
+                        <div class="all-comment-score">
+                            5.0
+                        </div>
+                        <span class="all-comment-star">
+                            <i class="iconfont icon-star"></i>
+                            <i class="iconfont icon-star"></i>
+                            <i class="iconfont icon-star"></i>
+                            <i class="iconfont icon-star"></i>
+                            <i class="iconfont icon-star"></i>
+                        </span>
+                        
+                    </div>
+                    <div class="all-comment-right">
+                        <ul>
+                            <li>
+                                <ul>
+                                    <li>
+                                        商品的综合评分：(<span class="number1">5</span>分)
+                                        <span class="star number1-star">
+                                            <i class="iconfont icon-star"></i>
+                                            <i class="iconfont icon-star"></i>
+                                            <i class="iconfont icon-star"></i>
+                                            <i class="iconfont icon-star"></i>
+                                            <i class="iconfont icon-star"></i>
+                                        </span>
+                                    </li>
+                                    <li>
+                                        宝贝与描述相符：(<span class="number2">5</span>分)
+                                        <span class="star number2-star">
+                                            <i class="iconfont icon-star"></i>
+                                            <i class="iconfont icon-star"></i>
+                                            <i class="iconfont icon-star"></i>
+                                            <i class="iconfont icon-star"></i>
+                                            <i class="iconfont icon-star"></i>
+                                        </span>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <ul>
+                                    <li>
+                                        卖家服务态度：(<span class="number3">5</span>分)
+                                        <span class="star number3-star">
+                                            <i class="iconfont icon-star"></i>
+                                            <i class="iconfont icon-star"></i>
+                                            <i class="iconfont icon-star"></i>
+                                            <i class="iconfont icon-star"></i>
+                                            <i class="iconfont icon-star"></i>
+                                        </span>
+                                    </li>
+                                    <li>
+                                        卖家发货速度：(<span class="number4">5</span>分)
+                                        <span class="star number4-star">
+                                            <i class="iconfont icon-star"></i>
+                                            <i class="iconfont icon-star"></i>
+                                            <i class="iconfont icon-star"></i>
+                                            <i class="iconfont icon-star"></i>
+                                            <i class="iconfont icon-star"></i>
+                                        </span>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="show-comment">
+                    <ul>
+                        <!-- <li>
+                            <div>
+                                <ul class="user clearfix">
+                                    <li class="user-header-img">
+                                        <img src="/images/userhead/man1.png" alt="">
+                                    </li>
+                                    <li class="user-name">
+                                        咸鱼王丶
+                                    </li>
+                                    <li class="star">
+                                        <span>
+                                            <i class="iconfont icon-star"></i>
+                                            <i class="iconfont icon-star"></i>
+                                            <i class="iconfont icon-star"></i>
+                                            <i class="iconfont icon-star"></i>
+                                            <i class="iconfont icon-star-half"></i>
+                                        </span>
+                                    </li>
+                                </ul>
+                                <div class="text">
+                                    <div class="comment-text">
+                                        这是一条测试评论这是一条测试评论这是一条测试评论这是一条测试评论这是一条测试评论这是一条测试评论这是一条测试评论
+                                        这是一条测试评论这是一条测试评论这是一条测试评论这是一条测试评论这是一条测试评论这是一条测试评论这是一条测试评论
+                                        这是一条测试评论这是一条测试评论
+                                    </div>
+                                    <ul class="comment-img">
+                                        <li>
+                                            <img src="/images/phone-1.jpg" alt="">
+                                        </li>
+                                        <li>
+                                            <img src="/images/phone-2.jpg" alt="">
+                                        </li>
+                                    </ul>
+                                    <div class="comment-time">2019-09-21 15:53:00</div>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div>
+                                <ul class="user clearfix">
+                                    <li class="user-header-img">
+                                        <img src="/images/man1.png" alt="">
+                                    </li>
+                                    <li class="user-name">
+                                        咸鱼王丶
+                                    </li>
+                                    <li class="star">
+                                        <span>
+                                            <i class="iconfont icon-star"></i>
+                                            <i class="iconfont icon-star"></i>
+                                            <i class="iconfont icon-star"></i>
+                                            <i class="iconfont icon-star"></i>
+                                            <i class="iconfont icon-star-half"></i>
+                                        </span>
+                                    </li>
+                                </ul>
+                                <div class="text">
+                                    <div class="comment-text">
+                                        这是一条测试评论这是一条测试评论这是一条测试评论这是一条测试评论这是一条测试评论这是一条测试评论这是一条测试评论
+                                        这是一条测试评论这是一条测试评论这是一条测试评论这是一条测试评论这是一条测试评论这是一条测试评论这是一条测试评论
+                                        这是一条测试评论这是一条测试评论
+                                    </div>
+                                    <ul class="comment-img">
+                                        <li>
+                                            <img src="/images/phone-1.jpg" alt="">
+                                        </li>
+                                        <li>
+                                            <img src="/images/phone-2.jpg" alt="">
+                                        </li>
+                                    </ul>
+                                    <div class="comment-time">2019-09-21 15:53:00</div>
+                                </div>
+                            </div>
+                        </li>
+                            <li>
+                                <div>
+                                    <ul class="user clearfix">
+                                        <li class="user-header-img">
+                                            <img src="/images/man1.png" alt="">
+                                        </li>
+                                        <li class="user-name">
+                                            咸鱼王丶
+                                        </li>
+                                        <li class="star">
+                                            <span>
+                                                <i class="iconfont icon-star"></i>
+                                                <i class="iconfont icon-star"></i>
+                                                <i class="iconfont icon-star"></i>
+                                                <i class="iconfont icon-star"></i>
+                                                <i class="iconfont icon-star-half"></i>
+                                            </span>
+                                        </li>
+                                    </ul>
+                                    <div class="text">
+                                        <div class="comment-text">
+                                            这是一条测试评论这是一条测试评论这是一条测试评论这是一条测试评论这是一条测试评论这是一条测试评论这是一条测试评论
+                                            这是一条测试评论这是一条测试评论这是一条测试评论这是一条测试评论这是一条测试评论这是一条测试评论这是一条测试评论
+                                            这是一条测试评论这是一条测试评论
+                                        </div>
+                                        <ul class="comment-img">
+                                            <li>
+                                                <img src="/images/phone-1.jpg" alt="">
+                                            </li>
+                                            <li>
+                                                <img src="/images/phone-2.jpg" alt="">
+                                            </li>
+                                        </ul>
+                                        <div class="comment-time">2019-09-21 15:53:00</div>
+                                    </div>
+                                </div>
+                            </li> -->
+                    </ul>
+                </div>
+                <div>
+                    <button class="btn-comment-more">加载更多</button>
+                </div>
+            </div>
+            <div class="introduction-detail">
+            </div>
+        </div>
+        
+
+        <div class="footer">
+            <div class="footer-container">
+                <div class="footer-box">
+                    <div class="div1 clearfix">
+                        <ul class="ul1 clearfix">
+                            <li>
+                                <div>
+                                    <img src="/images/footer1.png" alt="">
+                                    <div>
+                                        满80减运费
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div>
+                                    <img src="/images/footer2.png" alt="">
+                                    <div>
+                                        100+城市次日送达
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div>
+                                    <img src="/images/footer3.png" alt="">
+                                    <div>
+                                        7天无理由退货
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div>
+                                    <img src="/images/footer4.png" alt="">
+                                    <div>
+                                        15天换货保障
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div>
+                                    <img src="/images/footer5.png" alt="">
+                                    <div>
+                                        1年免费保修
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div>
+                                    <img src="/images/footer6.png" alt="">
+                                    <div>
+                                        上门快修
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                        <div class="hotline clearfix">
+                            <p class="p1">周一至周日 8:00-20:00</p>
+                            <p class="p2">400-788-3333</p>
+                            <a href="">
+                                <span>在线客服</span> 
+                            </a>
+                        </div>
+                    </div>
+                    <div class="line"></div>
+                    <div class="div2 clearfix">
+                        <div class="companyInfo">
+                            <ul class="ul2 clearfix">
+                                <li class="first">
+                                    <a href="">了解米子</a>
+                                </li>
+                                <li>
+                                    <a href="">加入我们</a>
+                                </li>
+                                <li>
+                                    <a href="">联系我们</a>
+                                </li>
+                                <li>
+                                    <a href="">Flyme</a>
+                                </li>
+                                <li>
+                                    <a href="">米子社区</a>
+                                </li>
+                                <li>
+                                    <a href="">天猫旗舰店</a>
+                                </li>
+                                <li>   
+                                    <a href="">问题反馈</a>
+                                </li>
+                                <li>
+                                    <a href="">XXXX授权名单公示</a>
+                                </li>
+                                <li>
+                                    <a href="">出版物xx许可证</a>
+                                </li>
+                            </ul>
+                            <div class="bottom">
+                                ©2020 Mizi Telecom Equipment Co., Ltd. All rights reserved.&nbsp;&nbsp;&nbsp;&nbsp;     
+                                XICP备13XX3XXX号&nbsp; 
+                                合字X2-20200XXX0&nbsp;  
+                                营业执照&nbsp; 
+                                法律声明&nbsp;
+                                <span>
+                                    <i></i>
+                                    X公网安备 4404XXX2496XXX 号
+                                </span>
+                                <a class="a1" href=""></a>
+                                <a class="a2" href=""></a>
+                                <a class="a3" href=""></a>
+                            </div>
+                        </div>
+                        <div class="relevant">
+                            <a class="a1" href=""></a>
+                            <a class="a2" href=""></a>
+                            <a class="a3" href=""></a>
+                            <a class="a4" href=""></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="dialog-car">
+            <div class="clearfix">
+                <i class="iconfont icon-cancel"></i>
+            </div>
+            <div>
+                <p class="p1">
+                    <i class="iconfont icon-pro-finish"></i>
+                    <span>已成功加入购物车</span>
+                </p>
+                <p class="p2">
+                    <a href="/html/car.html">
+                        <span>去购物车查看 >></span>
+                    </a>
+                </p>
+            </div>
+        </div>
+
+        <div class="dialog">
+            <div>
+                <p>
+                    <i class="iconfont icon-pro-finish"></i>
+                    <span class="dialog-text"></span>
+                </p>
+            </div>
+        </div>
+
+
+    </div>
+    <script src="/js/util.js"></script>
+    <script src="/js/common.js"></script>
+    <script src="/js/detail.js"></script>
+</body>
+</html>

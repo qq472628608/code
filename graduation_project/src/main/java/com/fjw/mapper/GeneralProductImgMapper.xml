@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.fjw.mapper.GeneralProductImgMapper">
+	<resultMap type="GeneralProductImg" id="GeneralProductImgResult">
+		<id column="id" property="id" jdbcType="BIGINT"/>
+		<result column="url" property="url" jdbcType="VARCHAR"/>
+		<result column="state" property="state" jdbcType="BIGINT"/>
+		<result column="key_attribute_id" property="key_attribute_id" jdbcType="BIGINT"/>
+		<association property="color" column="color_id" select="com.fjw.mapper.ColorMapper.getColor" javaType="Color"></association>
+	</resultMap>
+	<insert id="saveImg" parameterType="GeneralProductImg">
+  		insert into general_productimg (url,key_attribute_id,state,color_id) values (#{url,jdbcType=VARCHAR},
+  		#{key_attribute_id,jdbcType=BIGINT},#{state,jdbcType=BIGINT},#{color.id,jdbcType=BIGINT});
+  	</insert>
+	<delete id="deleteImg" parameterType="java.lang.Long">
+		delete from general_productimg where id=#{id,jdbcType=BIGINT};
+	</delete>
+	<select id="queryImgByState" resultMap="GeneralProductImgResult">
+		select * from general_productimg where key_attribute_id=#{key_attribute_id,jdbcType=BIGINT} and state=#{state,jdbcType=BIGINT};
+	</select>
+	<select id="queryImgByColor" resultMap="GeneralProductImgResult">
+		select * from general_productimg where key_attribute_id=#{key_attribute_id,jdbcType=BIGINT} and color_id=#{color_id,jdbcType=BIGINT};
+	</select>
+	<select id="list" resultMap="GeneralProductImgResult">
+		select * from general_productimg where key_attribute_id=#{key_attribute_id,jdbcType=BIGINT};
+	</select>
+	<select id="listAll" resultMap="GeneralProductImgResult">
+		select * from general_productimg;
+	</select>
+	<select id="listByState" resultMap="GeneralProductImgResult">
+		select * from general_productimg where state=#{state,jdbcType=BIGINT};
+	</select>
+	<select id="getImg" resultMap="GeneralProductImgResult">
+		select * from general_productimg where state = 12 and key_attribute_id = #{key_attribute_id,jdbcType=BIGINT} limit 1;
+	</select>
+	<select id="getImgByColor" resultMap="GeneralProductImgResult">
+		select * from general_productimg where key_attribute_id = #{key_attribute_id,jdbcType=BIGINT} and color_id = #{color_id,jdbcType=BIGINT} limit 1;
+	</select>
+	<select id="listGroupByColor" resultMap="GeneralProductImgResult">
+		select * from general_productimg where state = 12 group by key_attribute_id,color_id;
+	</select>
+	<update id="update" parameterType="GeneralProductImg">
+		update general_productimg set url = #{img.url,jdbcType=VARCHAR} where id = #{img.id,jdbcType=BIGINT};
+	</update>
+</mapper>

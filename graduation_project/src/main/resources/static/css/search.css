@@ -1,0 +1,144 @@
+.index-img{
+    width: 100%;
+    min-width: 1400px;
+    height: 450px;
+    background: url("../images/phone-index-1.jpg") center no-repeat;
+    background-size: cover;
+}
+.box{
+    background: #f4f4f4;
+}
+.box-container{
+    width: 1250px;
+    margin: 0 auto;
+    padding-top: 50px;
+}
+.list-header .div1{
+    float: left;
+    font-size: 28px;
+    font-weight: 300;
+}
+.list-header{
+    padding-top: 85px;
+    padding-bottom: 20px;
+    color: #333;
+}
+
+
+a{
+    text-decoration: none;
+}
+
+.list-box>ul>li{
+    display: inline-block;
+    width: 403px;
+    height: 556px;
+    box-shadow: -1px 1px 1px 1px #ececec;
+    background-color: #fff;
+    margin-left: 6px;
+    margin-right: 6px;
+    margin: 6px 0 6px 10px;
+    text-align: center;
+    vertical-align: middle;
+    position: relative;
+}
+.list-box>ul>li:hover{
+    box-shadow: -1px 1px 4px 1px #9e9c9c;
+    transition: 300ms;
+}
+.list-box>ul>li:hover .colorlist{
+    visibility:visible;
+}
+.list-box img{
+    width: 320px;
+    height: 320px;
+}
+.list-box .colorlist{
+    visibility: hidden;
+    padding: 10px 0;
+}
+.list-box .colorlist li{
+    display: inline-block;
+    margin: 0 10px;
+    width: 24px;
+    height: 24px;
+    text-align: center;
+}
+.list-box .colorlist .selected{
+    border: 1px solid #b1b0b0;
+    border-radius: 50%;
+}
+.colorlist img{
+    width: 20px;
+    height: 20px;
+    position: relative;
+    top: 2px;
+}
+.tag{
+    position: absolute;
+    display: inline-block;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-image: linear-gradient(120deg,#ff3149,#ff64a6);
+    text-align: center;
+    line-height: 60px;
+    color: #fff;
+    z-index: 10;
+    left: 20px;
+    top: 25px;
+}
+.product{
+    color: #333;
+    font-family: Helvetica,Tahoma,Arial,"PingFang SC","Hiragino Sans GB","Heiti SC",STXihei,"Microsoft YaHei",SimHei,"WenQuanYi Micro Hei";
+    margin-top: 30px;
+}
+.product .name{
+    font-size: 23px;
+    padding: 15px 0;
+}
+.product .introduction{
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    max-width: 270px;
+    padding-bottom: 25px;
+    margin: 0 auto;
+}
+.product .price{
+    font-size: 28px;
+    color: #c00;
+}
+
+
+
+.swiper-container{
+    background-color: #fff;
+    width: 100%;
+    text-align: center;
+}
+.swiper-container img{
+    width: 230px;
+}
+.swiper-slide li{
+    display: inline-block;
+    margin: 0 38px;
+}
+.swiper-slide .name{
+    max-width: 230px;
+    font-size: 19px;
+    color: #2b2b2b;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding-top: 35px;
+}
+.swiper-slide .price{
+    font-size: 28px;
+    color: #c00;
+    padding-top: 20px;
+    padding-bottom:30px;
+}
+.split{
+    height: 60px;
+}
