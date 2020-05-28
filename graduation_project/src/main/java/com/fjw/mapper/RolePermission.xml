@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.fjw.mapper.RolePermissionMapper">
+	<insert id="saveRolePermission" parameterType="RolePermission">
+  		insert into role_permission (role_id,permission_id) values (#{role_id,jdbcType=BIGINT},
+  		#{permission_id,jdbcType=BIGINT});
+  	</insert>
+	<delete id="deleteRolePermission" parameterType="java.lang.Long">
+		delete from role_permission where id=#{id,jdbcType=BIGINT};
+	</delete>
+	<select id="getRolePermission" resultType="AttributeValue">
+		select * from role_permission where id=#{id,jdbcType=BIGINT};
+	</select>
+	<update id="updateRolePermission" parameterType="RolePermission">
+		update role_permission set role_id=#{role_id,jdbcType=BIGINT},permission_id=#{permission_id,jdbcType=BIGINT} where id=#{id,jdbcType=BIGINT};
+	</update>
+	<select id="list" resultType="RolePermission">
+		select * from role_permission where role_id = #{role_id,jdbcType=BIGINT};
+	</select>
+</mapper>

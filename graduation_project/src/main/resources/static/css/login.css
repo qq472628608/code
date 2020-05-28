@@ -1,0 +1,235 @@
+.clearfix:after{
+    content: " ";
+    display: block;
+    clear: both;
+    width: 0;
+    height: 0;
+    visibility: hidden;
+}
+.container{
+    background: url("../images/totalBackground.png") center no-repeat;
+    background-size: cover;
+}
+.header{
+    width: 100%;
+    height: 80px;
+}
+a{
+    text-decoration: none;
+}
+.logo{
+    display: inline-block;
+    width: 150px;
+    height: 50px;
+    background-position: 10px 10px;
+    margin-left: 55px;
+    margin-top: 15px;
+    font-size: 26px;
+    color: #22baee;
+    font-weight: 550;
+}
+.box{
+    width: 960px;
+    margin: 0 auto;
+    text-align: center;
+}
+.box-title div{
+    margin: 10px 0 12px 0;
+    letter-spacing: 1px;
+    font-size: 38px;
+    color: #404040;
+}
+svg{
+    fill:#626363;
+}
+.box-title p{
+    cursor: default;
+    font-size: 16px;
+    color: #6b6565;
+}
+.box{
+    width: 370px;
+}
+.box-container{
+    padding: 5px;
+    box-shadow: 1px 1px 3px 1px #e0dfdf;
+    margin-top: 30px;
+    background-color: #fff;
+}
+.box-container-title{
+    cursor: pointer;
+    text-align: right;
+}
+.box-container-title img{
+    vertical-align: middle;
+}
+.box-container-title-img{
+    display: inline-block;
+    vertical-align: middle;
+    width: 70px;
+    height: 23px;
+    background:url("../images/login_01.png") right no-repeat;
+    text-align: center;
+}
+.box-container-title-img span{
+    vertical-align: middle;
+    font-size: 12px;
+    color: #7f7f7f;
+}
+.frame-title{
+    margin-top: 25px;
+    font-size: 26px;
+    line-height: 37px;
+    cursor: default;
+}
+.box-frame-action{
+    margin: 20px 0;
+}
+.box-frame-action span{
+    cursor: pointer;
+    font-size: 17px;
+    color: #737373;
+    margin-right: 30px;
+    margin-left: 30px;
+}
+.box-frame-action .selected{
+    color: #0c0c0c;
+}
+input[name='username'],input[name='password']{
+    height: 48px;
+    width: 300px;
+    margin-bottom: 15px;
+    background: #e9e9ea;
+    border-radius: 9px;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    text-indent: 16px;
+    font-size: 14px;
+    letter-spacing: 1px;
+    
+}
+.text-error::-webkit-input-placeholder { /* WebKit browsers */
+    color:    red;
+}
+.text-error:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+    color:    red;
+}
+.text-error::-moz-placeholder { /* Mozilla Firefox 19+ */
+    color:    red;
+}
+.text-error:-ms-input-placeholder { /* Internet Explorer 10+ */
+    color:    red;
+}
+.identifyLogin{
+    display: none;
+}
+input[name='email']{
+    height: 48px;
+    width: 300px;
+    margin-bottom: 15px;
+    background: #e9e9ea;
+    border-radius: 9px;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    text-indent: 16px;
+    font-size: 14px;
+    letter-spacing: 1px;
+}
+input[name='identifyCode']{
+    height: 48px;
+    width: 195px;
+    margin-bottom: 15px;
+    background: #e9e9ea;
+    border-radius: 9px;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    text-indent: 16px;
+    font-size: 14px;
+    letter-spacing: 1px;
+}
+.btn_identifyCode{
+    cursor: pointer;
+    height: 46px;
+    width: 100px;
+    border-radius: 9px;
+    outline: none;
+    border: none;
+    font-size: 14px;
+    color:#fff;
+    background-color: #22baee87;
+}
+.btn_identifyCode:hover{
+    background-color: #22baee;
+    transition: 220ms;
+}
+.box-frame-forget a{
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 14px;
+    color: #585858;
+    float: left;
+    position: relative;
+    left: 32px;
+}
+.box-frame-forget span{
+    float: right;
+    display: inline-block;
+    text-align: right;
+    width: 200px;
+    height: 14px;
+    line-height: 14px;
+    font-size: 14px;
+    color: red;
+    position: relative;
+    right: 32px;
+}
+.box-frame-forget a:hover{
+    color: #22baee;
+}
+.btn_submit{
+    width: 300px;
+    height: 48px;
+    border: none;
+    background-color: #22baee87;
+    color: white;
+    border-radius: 9px;
+    margin: 30px 0 10px 0;
+    font-size: 16px;
+    outline: none;
+    cursor: pointer;
+}
+.btn_submit:hover{
+    background-color: #22baee;
+    transition: 220ms;
+    font-size: 17px;
+}
+.box-frame-register{
+    width: 60px;
+    position: relative;
+    left: 269px;
+}
+.box-frame-register a{
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 14px;
+    color: #22baee;
+}
+.box-frame-register a:hover{
+    transition: 200ms;
+    font-size: 15px;
+}
+.box-frame-body{
+    padding-bottom: 40px;
+}
+.footer{
+    text-align: center;
+    padding: 60px 0 20px 0;
+    font-size: 12px;
+    color: #464343;
+}
+.footer span{ 
+    margin-left: 6px;
+}

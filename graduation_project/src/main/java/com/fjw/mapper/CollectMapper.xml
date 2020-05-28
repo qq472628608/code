@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.fjw.mapper.CollectMapper">
+	<resultMap type="Collect" id="CollectResult">
+		<id column="id" property="id" jdbcType="BIGINT"/>
+		<result column="user_id" property="user_id" jdbcType="BIGINT"/>
+		<association property="product" column="product_id" select="com.fjw.mapper.ProductMapper.getProduct" javaType="Product"></association>
+	</resultMap>
+	<insert id="collectAdd" parameterType="java.lang.Long">
+  		insert into collection (user_id,product_id) values (#{user_id,jdbcType=BIGINT},#{product_id,jdbcType=BIGINT});
+  	</insert>
+	<delete id="collectDelete" parameterType="java.lang.Long">
+		delete from collection where id=#{id,jdbcType=BIGINT} and user_id=#{user_id,jdbcType=BIGINT};
+	</delete>
+	<select id="list" resultMap="CollectResult" parameterType="java.lang.Long">
+		select * from collection where user_id = #{user_id,jdbcType=BIGINT};
+	</select>
+	<select id="get" resultMap="CollectResult" parameterType="java.lang.Long">
+		select * from collection where user_id = #{user_id,jdbcType=BIGINT} and product_id = #{product_id,jdbcType=BIGINT};
+	</select>
+</mapper>

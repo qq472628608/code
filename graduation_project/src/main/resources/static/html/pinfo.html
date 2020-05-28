@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/css/reset.min.css">
+    <link rel="stylesheet" href="/css/common.css">
+    <link rel="stylesheet" href="/css/iconfont.css">
+    <link rel="stylesheet" href="/css/pinfo.css">
+    <title>个人信息</title>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="header-container">
+                <a href="/html/index.html">
+                    <div class="logo">
+                        <svg fill="#00b4ff" version="1.1" id="Logo" xmlns="http://www.w3.org/2000/svg"
+                        x="0px" y="0px" width="130.048px" height="25.556px" viewBox="17.318 5.824 402.048 73.556"
+                        enable-background="new 17.318 5.824 402.048 73.556">
+                        <path d="M321.513,5.824H256.91v12.878h51.478l-49.294,44.581c-8.227,7.023-2.872,16.096,3.958,16.096h65.337V66.472 h-52.117l48.964-44.554C333.52,14.473,328.535,5.824,321.513,5.824">
+                        </path>
+                        <path d="M104.296,5.824h-71.36c-8.576,0-15.618,7.012-15.618,15.588v57.967H31.14V23.743 c0-2.711,2.208-5.041,4.92-5.041h25.31v60.677h14.428V18.702h25.312c2.712,0,4.919,2.329,4.919,5.041v55.636h13.86V21.416 C119.888,12.841,112.872,5.824,104.296,5.824">
+                        </path>
+                        <rect x="148.756" y="5.824" width="14.426" height="73.556"></rect>
+                        <line x1="185" y1="44" x2="237" y2="44" style="stroke:rgb(0,190,255,1);stroke-width:12"/>
+                        <rect x="352.506" y="5.824" width="14.426" height="73.556"></rect>
+                    </svg>
+                    </div>
+                </a>
+                <div class="link">
+                    <ul class="header-link-ul">
+                        <li class="link-last">
+                            <a href="" class="a-kind">我们相关</a>
+                            <div class="detail detail-download">
+                                <img src="/images/header30.jpg" alt="">
+                            </div>
+                        </li>
+                        <li>
+                            <div class="search">
+                                <input type="text" name="search" placeholder="北欧轻奢ins">
+                                <a href="javascript:search();">
+                                    <svg width="17px" height="14px" viewBox="0 0 17 14" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                        <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                            <g transform="translate(-1469.000000, -32.000000)" fill="#666666" fill-rule="nonzero">
+                                                <g>
+                                                    <g>
+                                                        <g transform="translate(1323.000000, 25.000000)">
+                                                            <g transform="translate(139.000000, 0.000000)">
+                                                                <path d="M14,20.75 C10.2720779,20.75 7.25,17.7279221 7.25,14 C7.25,10.2720779 10.2720779,7.25 14,7.25 C17.7279221,7.25 20.75,10.2720779 20.75,14 C20.75,17.7279221 17.7279221,20.75 14,20.75 Z M14,19.25 C16.8994949,19.25 19.25,16.8994949 19.25,14 C19.25,11.1005051 16.8994949,8.75 14,8.75 C11.1005051,8.75 8.75,11.1005051 8.75,14 C8.75,16.8994949 11.1005051,19.25 14,19.25 Z" id="Oval"></path>
+                                                                <path d="M19.0640714,18.1103001 C18.7270119,17.8695434 18.6489432,17.4011308 18.8896999,17.0640714 C19.1304566,16.7270119 19.5988692,16.6489432 19.9359286,16.8896999 L23.4359286,19.3896999 C23.7729881,19.6304566 23.8510568,20.0988692 23.6103001,20.4359286 C23.3695434,20.7729881 22.9011308,20.8510568 22.5640714,20.6103001 L19.0640714,18.1103001 Z" id="Line-2"></path>
+                                                            </g>
+                                                        </g>
+                                                    </g>
+                                                </g>
+                                            </g>
+                                        </g>
+                                    </svg>
+                                </a>
+                            </div>
+                        </li>
+                        <li class="user">
+                            <a class="user-title-tag" href="/html/pinfo.html">
+                            </a>
+                            <div class="user-ops-box">
+                                <div class="trangle-tag"></div>
+                                <ul class="user-ops">
+                                    <li>
+                                        <a href="/html/login.html">立即登陆</a>
+                                    </li>
+                                    <li>
+                                        <a href="/html/pinfo.html">个人中心</a>
+                                    </li>
+                                    <li>
+                                        <a href="">注销用户</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="shoppingcar">
+                            <a href="/html/car.html">
+                            </a>
+                            <em>0</em>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="box clearfix">
+            <div class="left">
+                <ul>
+                    <li>
+                        <a href="javascript:show('info');"><i class="iconfont icon-caidaniconwodehui"></i> 个人信息</a>
+                    </li>
+                    <li>
+                        <a href="javascript:show('order');"><i class="iconfont icon-orderform"></i> 我的订单</a>
+                    </li>
+                    <li>
+                        <a href="javascript:show('collection');"><i class="iconfont icon-collection"></i> 我的收藏</a>
+                    </li>
+                    <li>
+                        <a href="javascript:show('address');"><i class="iconfont icon-address"></i> 地址管理</a>
+                    </li>   
+                </ul>
+            </div>
+            <div class="right">
+
+                <div class="info" style="display: none">
+                    <div class="info-title">基本信息</div>
+                    <div class="info-body">
+                        <div class="info-div head-img">
+                            <div class="info-detail-title"><span class="spot spot1"></span>头像</div>
+                            <div class="head-img-div">
+                                <img src="" alt="">
+                                <div class="change-head">
+                                    <input type="file" name="file" hidden="true">
+                                    <button class="btn-change-head">上传头像</button>
+                                </div>
+                            </div>
+                            <div>
+                                <span class="info-tag">用户名：</span><span class="username"></span>
+                            </div>
+                        </div>
+                        <div class="info-div identify">
+                            <div class="info-detail-title"><span class="spot spot2"></span>验证手机</div>
+                            <i class="iconfont icon-shouji"></i><input type="text" name="phone"><button class="btn-identify">验证手机</button>
+                        </div>
+                        <div class="info-div info-box">
+                            <div class="info-detail-title"><span class="spot spot3"></span>个人信息<button class="btn-change-detail">修改</button></div>
+                            <ul>
+                                <li>
+                                    <span class="info-tag info-detail-input">昵称：</span><input type="text" name="name" disabled="true">
+                                </li>
+                                <li>
+                                    <span class="info-tag info-detail-input">性别：</span><input type="radio" name="sex" value="1"  disabled="true">
+                                    <span class="sex">男</span>&nbsp;&nbsp;<input type="radio" name="sex" value="2" disabled="true"><span class="sex">女</span>
+                                </li>
+                                <li>
+                                    <span class="info-tag info-detail-input">个人说明：</span><input type="text" name="p-note"  disabled="true">
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="info-div submit">
+                            <button class="info-btn-submit">保存修改</button>
+                        </div>
+                        <div class="info-div changePs">
+                            <div class="info-detail-title"><span class="spot spot4"></span>修改密码</div>
+                            <a href="javascript:;">修改</a>
+                            <div class="change-password">
+                                <input type="password" name="password">
+                                <button class="info-btn-changePs">保存密码</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="order" style="display: none">
+                    <div class="order-title">
+                        <ul>
+                            <li class="selected"><span>全部订单</span></li>
+                            <li><span>待付款</span></li>
+                            <li><span>待发货</span></li>
+                            <li><span>已发货</span></li>
+                            <li class="last">其他</li>
+                        </ul>
+                    </div>
+                    <div class="order-body">
+                        <div>
+                            <ul class="order-tag">
+                                <li class="tag1">订单明细</li>
+                                <li class="tag2">售后</li>
+                                <li class="tag3">金额</li>
+                                <li class="tag4">状态</li>
+                                <li class="tag5">操作</li>
+                            </ul>
+                        </div>
+                        <ul>
+                        </ul>
+                    </div>
+                </div>
+
+
+                <div class="collection" style="display:none">
+                    <div class="collection-title">
+                        <span>已收藏商品</span>
+                    </div>
+                    <div class="collection-box">
+                        <ul>
+                        </ul>
+                    </div>
+                </div>
+
+
+                <div class="address">
+                    <div class="add-address">
+                        <div class="address-title">
+                            <span>新增收货地址</span>
+                            <span class="span1">（您目前已有地址<span class="span2">0</span>个，最多还可以增加<span class="span2">10</span>个）</span>
+                        </div>
+                        <div class="add-address-box">
+                            <div>
+                                <ul>
+                                    <li>
+                                        <span>收货人姓名<i class="mark">*</i></span><input type="text" name="receiver-name" placeholder="长度不超过十五个字符">
+                                    </li>
+                                    <li>
+                                        <span>收货人手机号<i class="mark">*</i></span><input type="text" name="receiver-phone" placeholder="请输入11位手机号">
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="area">
+                                <ul>
+                                    <li>
+                                        <span>收货人地址<i class="mark">*</i></span>
+                                    </li>
+                                    <li class="area-province">
+                                        <input class="area-input-province" type="text" name="province" readonly="true" placeholder="省/直辖市">
+                                        <div class="triangle"></div>
+                                        <div class="area-list">
+                                            <ul>
+                                                
+                                            </ul>
+                                        </div>
+                                    </li>   
+                                    <li class="area-city">
+                                        <input class="area-input-city" type="text" name="city" readonly="true" placeholder="城市">
+                                        <div class="triangle"></div>
+                                        <div class="area-list">
+                                            <ul>
+
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li class="area-county">
+                                        <input class="area-input-county" type="text" name="county" readonly="true" placeholder="区/县">
+                                        <div class="triangle"></div>
+                                        <div class="area-list">
+                                            <ul>
+
+                                            </ul>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div>
+                                <span>详细地址<i class="mark">*</i></span><input type="text" name="detail-address" placeholder="请输入不少于4不超过50个字的详细地址，例如乡镇、街道、门牌号">
+                            </div>
+                        </div>
+                        <div class="add-address-operation">
+                            <input type="checkbox" name="isDefault"><span>设为默认</span>
+                            <button class="btn-save-address">保存</button>
+                        </div>
+                    </div>
+                    <div class="exist-address">
+                        <div class="address-title">
+                            已有地址
+                        </div>
+                        <div class="exist-address-box">
+                            <div class="exist-address-box-title">
+                                <ul>
+                                    <li class="li1">收货人姓名</li>
+                                    <li class="li2">收货人地址</li>
+                                    <li class="li3">收货人手机号</li>
+                                    <li class="li4">操作</li>
+                                </ul>
+                            </div>
+                            <div class="exist-address-box-body">
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="orderDetail" style="display:none">
+                    <div class="title">
+                        <span>订单详情</span>
+                    </div>
+                    <div class="progress">
+                        <div class="clearfix">
+                            <hr class="progress-line">
+                            <hr class="progress-covering">
+                            <ul>
+                                <li class="li1">
+                                    <div class="circle"></div>
+                                    <div>提交订单</div>
+                                    <div class="order-time">2019-11-21 12:00:00</div>
+                                </li>
+                                <li class="li2">
+                                    <div class="circle"></div>
+                                    <div>买家已付款</div>
+                                </li>
+                                <li class="li3">
+                                    <div class="circle"></div>
+                                    <div>发货中</div>
+                                </li>
+                                <li class="li4">
+                                    <div class="circle"></div>
+                                    <div>交易成功</div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="state">
+                        <div>
+                            <p class="p1">订单状态：等待买家付款（请尽快付款）</p>
+                            <p class="p2">24小时后订单会自动取消</p>
+                        </div>
+                    </div>
+                    <div class="detail-box">
+                        <div class="code-box">
+                            <span>订单号：<span class="order-code">8921398823123345</span></span>
+                        </div>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <td class="td1">
+                                        <span>供应商：魅族</span>
+                                        <span class="service"><i class="iconfont icon-service"></i>&nbsp;<span class="span3">联系客服</span></span>
+                                    </td>
+                                    <td class="td2">单价</td>
+                                    <td class="td3">数量</td>
+                                    <td class="td4">小计</td>
+                                    <td class="td5">售后</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                               
+                                <tr class="order-last">
+                                    <td class="clearfix" colspan="5">
+                                        <div class="div1">
+                                            <p class="p1">
+                                                发票类型：电子发票
+                                            </p>
+                                            <p class="p2">
+                                                发票抬头：默认为收货人姓名
+                                            </p>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="order-total">
+                        <div class="div1 clearfix">
+                            <span class="box3-left">总金额</span>
+                            <span class="box3-right">￥<span></span></span>
+                        </div>
+                        <div class="div2 clearfix">
+                            <span class="box3-left">运费</span>
+                            <span class="box3-right">￥<span></span></span>
+                        </div>
+                        <div class="div3 clearfix">
+                            <span class="box3-left">应付：</span>
+                            <div class="box3-right">
+                                <div>
+                                    <span>￥<span class="span1"></span></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="back" style="display:none;">
+                        <div class="clearfix">
+                            <i class="iconfont icon-cancel"></i>
+                        </div>
+                        <div class="edit-comment">
+                            <div class="all-comment-right">
+                                <ul>
+                                    <li>
+                                        <ul>
+                                            <li>
+                                                商品的综合评分：(<span class="number">5</span>分)
+                                                <span class="star">
+                                                    <i class="iconfont icon-star"></i>
+                                                    <i class="iconfont icon-star"></i>
+                                                    <i class="iconfont icon-star"></i>
+                                                    <i class="iconfont icon-star"></i>
+                                                    <i class="iconfont icon-star"></i>
+                                                </span>
+                                            </li>
+                                            <li>
+                                                宝贝与描述相符：(<span class="number">5</span>分)
+                                                <span class="star">
+                                                    <i class="iconfont icon-star"></i>
+                                                    <i class="iconfont icon-star"></i>
+                                                    <i class="iconfont icon-star"></i>
+                                                    <i class="iconfont icon-star"></i>
+                                                    <i class="iconfont icon-star"></i>
+                                                </span>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <ul>
+                                            <li>
+                                                卖家服务态度：(<span class="number">5</span>分)
+                                                <span class="star">
+                                                    <i class="iconfont icon-star"></i>
+                                                    <i class="iconfont icon-star"></i>
+                                                    <i class="iconfont icon-star"></i>
+                                                    <i class="iconfont icon-star"></i>
+                                                    <i class="iconfont icon-star"></i>
+                                                </span>
+                                            </li>
+                                            <li>
+                                                卖家发货速度：(<span class="number">5</span>分)
+                                                <span class="star">
+                                                    <i class="iconfont icon-star"></i>
+                                                    <i class="iconfont icon-star"></i>
+                                                    <i class="iconfont icon-star"></i>
+                                                    <i class="iconfont icon-star"></i>
+                                                    <i class="iconfont icon-star"></i>
+                                                </span>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="edit-area">
+                                <div class="edit-text-area" contenteditable="true">
+                                    
+                                </div>
+                                <ul class="edit-comment-img">
+                                    
+                                </ul>
+                            </div>
+                            <div class="operation-area clearfix">
+                                <span><input type="file" name="file"><span><i class="iconfont icon-Increase"></i></span></span>
+                                <button>提交<i class="iconfont icon-enter"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="footer">
+            <div class="footer-container">
+                <div class="footer-box">
+                    <div class="div1 clearfix">
+                        <ul class="ul1 clearfix">
+                            <li>
+                                <div>
+                                    <img src="/images/footer1.png" alt="">
+                                    <div>
+                                        满80减运费
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div>
+                                    <img src="/images/footer2.png" alt="">
+                                    <div>
+                                        100+城市次日送达
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div>
+                                    <img src="/images/footer3.png" alt="">
+                                    <div>
+                                        7天无理由退货
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div>
+                                    <img src="/images/footer4.png" alt="">
+                                    <div>
+                                        15天换货保障
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div>
+                                    <img src="/images/footer5.png" alt="">
+                                    <div>
+                                        1年免费保修
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div>
+                                    <img src="/images/footer6.png" alt="">
+                                    <div>
+                                        上门快修
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                        <div class="hotline clearfix">
+                            <p class="p1">周一至周日 8:00-20:00</p>
+                            <p class="p2">400-788-3333</p>
+                            <a href="">
+                                <span>在线客服</span> 
+                            </a>
+                        </div>
+                    </div>
+                    <div class="line"></div>
+                    <div class="div2 clearfix">
+                        <div class="companyInfo">
+                            <ul class="ul2 clearfix">
+                                <li class="first">
+                                    <a href="">了解米子</a>
+                                </li>
+                                <li>
+                                    <a href="">加入我们</a>
+                                </li>
+                                <li>
+                                    <a href="">联系我们</a>
+                                </li>
+                                <li>
+                                    <a href="">Flyme</a>
+                                </li>
+                                <li>
+                                    <a href="">米子社区</a>
+                                </li>
+                                <li>
+                                    <a href="">天猫旗舰店</a>
+                                </li>
+                                <li>   
+                                    <a href="">问题反馈</a>
+                                </li>
+                                <li>
+                                    <a href="">XXXX授权名单公示</a>
+                                </li>
+                                <li>
+                                    <a href="">出版物xx许可证</a>
+                                </li>
+                            </ul>
+                            <div class="bottom">
+                                ©2020 Mizi Telecom Equipment Co., Ltd. All rights reserved.&nbsp;&nbsp;&nbsp;&nbsp;     
+                                XICP备13XX3XXX号&nbsp; 
+                                合字X2-20200XXX0&nbsp;  
+                                营业执照&nbsp; 
+                                法律声明&nbsp;
+                                <span>
+                                    <i></i>
+                                    X公网安备 4404XXX2496XXX 号
+                                </span>
+                                <a class="a1" href=""></a>
+                                <a class="a2" href=""></a>
+                                <a class="a3" href=""></a>
+                            </div>
+                        </div>
+                        <div class="relevant">
+                            <a class="a1" href=""></a>
+                            <a class="a2" href=""></a>
+                            <a class="a3" href=""></a>
+                            <a class="a4" href=""></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="dialog">
+            <div class="clearfix">
+                <i class="iconfont icon-cancel"></i>
+            </div>
+            <div>
+                <p>
+                    <i class="iconfont icon-pro-finish"></i>
+                    <span class="dialog-text"></span>
+                </p>
+            </div>
+        </div>
+
+
+    </div>
+    <script src="/js/util.js"></script>
+    <script src="/js/common.js"></script>
+    <script src="/js/pinfo.js"></script>
+</body>
+</html>
