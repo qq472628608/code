@@ -14,7 +14,7 @@
 	<properties>
 		<project.buid.sourceEncoding>UTF8</project.buid.sourceEncoding>
 		<spring.version>5.1.1.RELEASE</spring.version>
-		<mybatis.version>3.4.6</mybatis.version>
+		<mybatis.version>3.5.6</mybatis.version>
 	</properties>
 
 	<!-- 构建配置 -->
